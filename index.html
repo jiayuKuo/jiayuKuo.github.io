@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort| Web Communications II weekly Quizzes </title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Web Communications II Weekly Quizzes</h1>
+    <h2>Please use the grade sorting system for reordering weekly Quiz results based on date or grade</h2>
+    </header>
+    <main>
+    
+
+    <form action="#">
+        <label for="gradeSort">Sort Grade by:</label>
+        <select name="gradeSort" id="gradeSort">
+            <option value="">--Please choose one--</option>
+            <option value="date">Date</option>
+            <option value="grade">Grade</option>
+        </select>
+    </form>
+    <table id="grade_box">
+        <tr>
+            <th>Grade Item</th>
+            <th>Date</th>
+            <th>Grade</th>
+        </tr>
+       
+        <tr class="quizInfo" data-date="0126" data-grade="13">
+            <td>Week 3 Quiz</td>
+            <td>Jan 26, 2022 </td>
+            <td>F</td>
+        </tr >
+        <tr class="quizInfo" data-date="0202" data-grade="13">
+            <td>Week 4 Quiz</td>
+            <td>Feb 2, 2022</td>
+            <td>F</td>
+        </tr>
+        <tr class="quizInfo" data-date="0209" data-grade="11">
+            <td>Week 5 Quiz</td>
+            <td>Feb 9, 2022</td>
+            <td>D</td>
+        </tr>
+        <tr class="quizInfo" data-date="0216" data-grade="9">
+            <td>Week 6 Quiz</td>
+            <td>Feb 16, 2022</td>
+            <td>C-</td>
+        </tr>
+        <tr class="quizInfo" data-date="0302" data-grade="9">
+            <td>Week 7 Quiz</td>
+            <td>Mar 2, 2022</td>
+            <td>C-</td>
+        </tr>
+        <tr class="quizInfo" data-date="0309" data-grade="1">
+            <td>Week 8 Quiz</td>
+            <td>Mar 9, 2022</td>
+            <td>A+</td>
+        </tr>
+        <tr class="quizInfo" data-date="0316" data-grade="1">
+            <td>Week 9 Quiz</td>
+            <td>Mar 16, 2022</td>
+            <td>A+</td>
+        </tr>
+        <tr class="quizInfo" data-date="0413" data-grade="10">
+            <td>Week 13 Quiz</td>
+            <td>Apr 13, 2022</td>
+            <td>D+</td>
+        </tr>
+    
+    </table>
+
+
+    </main>
+    <script>
+        function sortGrade(sortTerm){
+           
+                var gradeArray=Array.prototype.slice.call(grade_box.querySelectorAll(".quizInfo"),0);
+            
+                if(sortTerm=='date'){   
+                    gradeArray.sort((a,b)=>b.dataset.date - a.dataset.date);
+                }
+                if(sortTerm=='grade'){
+                    gradeArray.sort((a,b)=>b.dataset.grade - a.dataset.grade);
+                }
+                gradeArray.forEach((allgrade) =>{
+                    grade_box.appendChild(allgrade);
+                })
+            }
+            var form = document.querySelector('form');
+            form.style.display="block"; 
+    
+            gradeSort.addEventListener("change",function(){
+                sortGrade(gradeSort.value);
+            })
+    </script>
+</body>
+
+</html>
