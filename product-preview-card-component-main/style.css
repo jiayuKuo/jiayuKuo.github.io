@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap');
+
+*{
+    /* border:1px solid red; */
+    box-sizing: border-box;
+}
+
+body{
+    background-color: hsl(30, 38%, 92%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 130vh;
+    color:grey;
+
+}
+main{
+    background-color: hsl(0, 0%, 100%);
+    width:100%;
+    max-height: 37em;
+    max-width: 50em;
+    display:flex;
+    margin:0 auto;
+    border-radius: 25px;
+    overflow:hidden;   
+    /* 凸出去的東西 不要顯示  */
+}
+.imgbox img{
+    max-width: 100%;
+    /* max-height: 100%; */
+    object-fit: cover;  
+}
+.imgbox{
+    /* overflow: hidden; */
+    max-width: 50ch;
+}
+section{
+    width:50%;
+    padding:2rem;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+
+   
+}
+section > p:first-of-type{
+    text-transform: uppercase;
+    letter-spacing:.5em;
+}
+section > p:nth-of-type(2){
+    line-height: 2rem;
+    padding-top: 1rem;;
+
+    
+}
+h1, #price p:first-child {
+    font-family: 'Fraunces', 'Times New Roman', Times, serif; 
+}
+h1{
+    color:black;
+    font-size: 5vh;
+    line-height: 1em;
+    /* letter-spacing:-.03em; */
+    margin:0;
+    
+}
+
+button{
+    background-color: hsl(158, 36%, 37%);
+    color:white;
+    font-size: 14px;
+    margin:0 auto;
+    padding:1rem 0;
+    width:100%;
+    border-radius: 10px;
+    border: none ;
+    font-family: 'Montserrat',Arial, Helvetica, sans-serif sans-serif;
+}
+
+button:hover{
+    background-color: hsl(212, 21%, 14%);
+}
+button img{
+    width: 2.5em;
+    vertical-align: middle;
+    padding-right: 1rem;
+}
+#price{
+    display:flex;
+    align-items:center;
+    
+}
+#price p:first-child{
+    color:hsl(158, 36%, 37%);
+    font-size: 3rem;
+    padding-right: 2rem;
+    margin:10px 0px;
+    letter-spacing:.05em;
+}
+#price p:nth-child(2){
+    text-decoration: line-through;
+
+}
+.attribution{
+    margin-top:2rem;
+
+}
+
+
+@media screen and (max-width: 650px){
+    
+ main{
+        flex-direction: column;
+        max-height: fit-content;
+        max-width: 30em;
+        
+    }
+section{
+    height:60%;
+    width: 100%;
+}
+.imgbox{
+ max-width: max-content;
+ overflow: hidden;
+ height:25rem;
+
+}
+.imgbox img{
+ max-width: 100%; 
+    width: 100%;
+    height: auto;
+    object-fit: none;
+    
+}
+}
